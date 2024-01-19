@@ -15,8 +15,7 @@ class Pizza(models.Model):
     name = models.CharField(max_length=30)
     toppings = models.CharField(max_length = 30)
     size = models.CharField(default = '---',choices = SIZE_CHOICES,max_length = 10)
-    price = models.CharField(default = '---',max_length=2,choices = PRICE_CHOICES)
-
+    
 class Restaurant(models.Model):
     id = models.AutoField(primary_key=True)
     restaurant_name = models.CharField(max_length=50)
@@ -28,3 +27,4 @@ class RestPizza(models.Model):
     pizza = models.ForeignKey("Pizza",on_delete=models.CASCADE)
     rest_info = models.ForeignKey("Restaurant",on_delete=models.CASCADE)
     price = models.CharField(default = '---',max_length=2,choices = PRICE_CHOICES)
+

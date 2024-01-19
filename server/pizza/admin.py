@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Pizza,Restaurant,RestPizza
 
 class PizzaAdmin(admin.ModelAdmin):
-    list_display = ('name',"toppings",'price','size')
+    list_display = ('name',"toppings",'size')
 
 class RestaurantAdmin(admin.ModelAdmin):
     list_display = ('restaurant_name','address','city')
