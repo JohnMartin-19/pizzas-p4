@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # third party apps
-    'rest_framework'
+    'rest_framework',
     #local
     'pizza.apps.PizzaConfig',
 ]

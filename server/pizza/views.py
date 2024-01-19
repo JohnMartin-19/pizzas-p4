@@ -31,3 +31,4 @@ class ListRestPizza(generics.ListAPIView):
 class DetailRestPizza(generics.RetrieveAPIView):
     queryset = RestPizza.objects.all()
     serializer_class = RestPizzaSerializer
+    
