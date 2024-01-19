@@ -6,7 +6,7 @@ class PizzaSerializer(serializers.ModelSerializer):
         model = Pizza
         fields=('name','toppings','size')
 
-class RegisterSerializer(serializers.ModelSerializer):
+class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
         fields = ('restaurant_name','address','city')
