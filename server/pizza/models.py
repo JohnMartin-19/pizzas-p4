@@ -21,7 +21,7 @@ class Restaurant(models.Model):
     restaurant_name = models.CharField(max_length=50)
     address = models.CharField(max_length=256)
     city = models.CharField(max_length=50)
-
+    pizza = models.ForeignKey('Pizza', on_delete = models.CASCADE,default = 0)
 class RestPizza(models.Model):
    # id = models.IntegerField(primary_key=True)
     pizza = models.ForeignKey("Pizza",on_delete=models.CASCADE)
