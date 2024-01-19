@@ -5,30 +5,29 @@ from .serializers import PizzaSerializer,RestPizzaSerializer,RestaurantSerialize
 # Create your views here.
 
 #Pizza View
-class ListPizza(generics.ListAPIView):
+class ListPizza(generics.ListCreateAPIView):
     queryset = Pizza.objects.all()
     serializer_class = PizzaSerializer
 
-class DetailPizza(generics.RetrieveAPIView):
+class DetailPizza(generics.RetrieveUpdateDestroyAPIView):
     queryset = Pizza.objects.all()
     serializer_class = PizzaSerializer
 
 #Restaurant view
 
-class ListRestaurant(generics.ListAPIView):
+class ListRestaurant(generics.ListCreateAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer 
 
-class DetailRestaurant(generics.RetrieveAPIView):
+class DetailRestaurant(generics.RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
 
 #RestPizza view
     
-class ListRestPizza(generics.ListAPIView):
+class ListRestPizza(generics.ListCreateAPIView):
     queryset = RestPizza.objects.all()
     serializer_class = RestPizzaSerializer
-class DetailRestPizza(generics.RetrieveAPIView):
+class DetailRestPizza(generics.RetrieveUpdateDestroyAPIView):
     queryset = RestPizza.objects.all()
     serializer_class = RestPizzaSerializer
-    
