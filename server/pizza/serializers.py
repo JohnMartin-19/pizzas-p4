@@ -9,7 +9,7 @@ class PizzaSerializer(serializers.ModelSerializer):
 class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
-        fields = ('restaurant_name','address','city')
+        fields = ('restaurant_name','address','city','pizza')
 
 class RestPizzaSerializer(serializers.ModelSerializer):
     class Meta:

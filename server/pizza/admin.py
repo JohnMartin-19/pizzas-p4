@@ -7,7 +7,7 @@ class PizzaAdmin(admin.ModelAdmin):
     list_display = ('name',"toppings",'size')
 
 class RestaurantAdmin(admin.ModelAdmin):
-    list_display = ('restaurant_name','address','city')
+    list_display = ('restaurant_name','address','city','pizza')
 
 class RestPizzaAdmin(admin.ModelAdmin):
     list_display = ('pizza','rest_info','price')
