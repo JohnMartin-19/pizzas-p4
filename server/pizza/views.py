@@ -9,7 +9,7 @@ class ListPizza(generics.ListAPIView):
     queryset = Pizza.objects.all()
     serializer_class = PizzaSerializer
 
-class DetailPizza(generics.ListAPIView):
+class DetailPizza(generics.RetrieveAPIView):
     queryset = Pizza.objects.all()
     serializer_class = PizzaSerializer
 
@@ -19,7 +19,7 @@ class ListRestaurant(generics.ListAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer 
 
-class DetailRestaurant(generics.ListAPIView):
+class DetailRestaurant(generics.RetrieveAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
 
@@ -28,6 +28,6 @@ class DetailRestaurant(generics.ListAPIView):
 class ListRestPizza(generics.ListAPIView):
     queryset = RestPizza.objects.all()
     serializer_class = RestPizzaSerializer
-class DetailRestPizza(generics.ListAPIView):
+class DetailRestPizza(generics.RetrieveAPIView):
     queryset = RestPizza.objects.all()
     serializer_class = RestPizzaSerializer
