@@ -1,9 +1,10 @@
 .nav-menu{
     display: flex;
+    list-style: none;
 }
 .nav-menu li{
     list-style: none;
-    padding: 10px;
+    padding: 20px;
 }
 
 .nav-menu li a {
@@ -11,9 +12,7 @@
     font-weight: 500;
 }
 
-.hamburger{
-    display: none;
-}
+
 .nav{
     display: flex;
     justify-content: space-between;
@@ -23,6 +22,7 @@
     height: 90px;
     position: fixed;
     z-index: 10;
+    background-color: black;
 }
 
 .nav-bg{
