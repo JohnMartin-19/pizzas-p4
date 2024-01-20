@@ -1,4 +1,4 @@
-import { useEffect,useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import {Routes,Route} from 'react-router-dom'
 import NavBar from './NavBar';
@@ -8,18 +8,6 @@ import Home from './Home';
 
 function App() {
   const [ setPage] = useState('/')
-
- useEffect(()=>{
-  fetch("http://127.0.0.1:8000/api/restaurant/")
-    .then(function(response){response.json()
-    .then(function(data) {
-        console.log(data);
-    });
-  })
-    .catch(function(error) {
-      console.log('Fetch Error:', error);
-    });
-  },[])
   return (
     <div className="App">
       <NavBar onChange={setPage} />

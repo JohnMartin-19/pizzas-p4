@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # third party apps
     'rest_framework',
     'corsheaders',
+    'drf_spectacular',
     #local
     'pizza.apps.PizzaConfig',
 ]
@@ -48,6 +49,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         'rest_framework.permissions.AllowAny',
     ],
+    "DEFAULT_SCHEMA_CLASS":"drf_spectacular.openapi.AutoSchema",
 } 
 
 MIDDLEWARE = [
@@ -67,6 +69,12 @@ CORS_ALLOWED_ORIGINS = (
 )
 
 CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+
+SPECTACULAR_SETTINGS = {
+"TITLE": "PIZZA API PROJECT",
+"DESCRIPTION": "Pizza Code Challenge API Endpoints",
+"VERSION": "1.0.0",
+}
 
 ROOT_URLCONF = 'pizza_project.urls'
 

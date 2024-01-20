@@ -1,0 +1,561 @@
+openapi: 3.0.3
+info:
+  title: PIZZA API PROJECT
+  version: 1.0.0
+  description: Pizza Code Challenge API Endpoints
+paths:
+  /api/pizza/:
+    get:
+      operationId: pizza_list
+      tags:
+      - pizza
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pizza'
+          description: ''
+    post:
+      operationId: pizza_create
+      tags:
+      - pizza
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pizza'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Pizza'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Pizza'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pizza'
+          description: ''
+  /api/pizza/{id}/:
+    get:
+      operationId: pizza_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizza
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pizza'
+          description: ''
+    put:
+      operationId: pizza_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizza
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pizza'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Pizza'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Pizza'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pizza'
+          description: ''
+    patch:
+      operationId: pizza_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizza
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPizza'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPizza'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPizza'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pizza'
+          description: ''
+    delete:
+      operationId: pizza_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - pizza
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/restaurant/:
+    get:
+      operationId: restaurant_list
+      tags:
+      - restaurant
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
+          description: ''
+    post:
+      operationId: restaurant_create
+      tags:
+      - restaurant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+          description: ''
+  /api/restaurant/{id}/:
+    get:
+      operationId: restaurant_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - restaurant
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+          description: ''
+    put:
+      operationId: restaurant_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - restaurant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+          description: ''
+    patch:
+      operationId: restaurant_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - restaurant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedRestaurant'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedRestaurant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedRestaurant'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+          description: ''
+    delete:
+      operationId: restaurant_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - restaurant
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/restpizza/:
+    get:
+      operationId: restpizza_list
+      tags:
+      - restpizza
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestPizza'
+          description: ''
+    post:
+      operationId: restpizza_create
+      tags:
+      - restpizza
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestPizza'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RestPizza'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RestPizza'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestPizza'
+          description: ''
+  /api/restpizza/{id}/:
+    get:
+      operationId: restpizza_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - restpizza
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestPizza'
+          description: ''
+    put:
+      operationId: restpizza_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - restpizza
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestPizza'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RestPizza'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RestPizza'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestPizza'
+          description: ''
+    patch:
+      operationId: restpizza_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - restpizza
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedRestPizza'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedRestPizza'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedRestPizza'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestPizza'
+          description: ''
+    delete:
+      operationId: restpizza_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - restpizza
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    PatchedPizza:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 30
+        toppings:
+          type: string
+          maxLength: 30
+        size:
+          $ref: '#/components/schemas/SizeEnum'
+    PatchedRestPizza:
+      type: object
+      properties:
+        pizza:
+          type: integer
+        rest_info:
+          type: integer
+        price:
+          $ref: '#/components/schemas/PriceEnum'
+    PatchedRestaurant:
+      type: object
+      properties:
+        restaurant_name:
+          type: string
+          maxLength: 50
+        address:
+          type: string
+          maxLength: 256
+        city:
+          type: string
+          maxLength: 50
+        pizza:
+          type: integer
+    Pizza:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 30
+        toppings:
+          type: string
+          maxLength: 30
+        size:
+          $ref: '#/components/schemas/SizeEnum'
+      required:
+      - name
+      - toppings
+    PriceEnum:
+      enum:
+      - '10'
+      - '20'
+      - '30'
+      type: string
+      description: |-
+        * `10` - $10
+        * `20` - $20
+        * `30` - $30
+    RestPizza:
+      type: object
+      properties:
+        pizza:
+          type: integer
+        rest_info:
+          type: integer
+        price:
+          $ref: '#/components/schemas/PriceEnum'
+      required:
+      - pizza
+      - rest_info
+    Restaurant:
+      type: object
+      properties:
+        restaurant_name:
+          type: string
+          maxLength: 50
+        address:
+          type: string
+          maxLength: 256
+        city:
+          type: string
+          maxLength: 50
+        pizza:
+          type: integer
+      required:
+      - address
+      - city
+      - restaurant_name
+    SizeEnum:
+      enum:
+      - small
+      - medium
+      - large
+      type: string
+      description: |-
+        * `small` - small
+        * `medium` - medium
+        * `large` -  large
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
