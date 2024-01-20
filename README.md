@@ -1,4 +1,5 @@
 # pizzas-p4
+# Backend (Django)
 The project consist of both a client(FrontEnd) built in React, and a server(Backend) built in Django&DRF.
 I started by creating the Backend, exposing the endpoints and tested the APIs making sure that they are consumable by the frontend. It works. To access the server, activate the .venv then run the server(port=8000)-Default.
 I have documented my APIs using Swagger-UI. This makes it easier for any developer to consumer my APIs at this interface.
