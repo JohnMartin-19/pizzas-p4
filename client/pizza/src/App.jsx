@@ -1,8 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import './App.css';
 import {Routes,Route} from 'react-router-dom'
+import NavBar from './NavBar';
+import Restaurants from './Restaurants';
+import Pizza from'./Pizza';
+import Home from './Home';
 
 function App() {
+  const [ setPage] = useState('/')
+
  useEffect(()=>{
   fetch("http://127.0.0.1:8000/api/restaurant/")
     .then(function(response){response.json()
@@ -16,8 +22,13 @@ function App() {
   },[])
   return (
     <div className="App">
-      <h1>Welcome to Pizza HUB</h1>
-      <h3>View your favorite pizzas here!</h3>
+      <NavBar onChange={setPage} />
+      <br />
+      <Routes>
+        <Route path="/Pizza" element={<Pizza heading='Available Pizzas' text='Below are our Pizza Varieties'  />} />
+        <Route path="/Restaurants" element={<Restaurants heading='Below are our Restaurants'/>} />
+        <Route exact path="/" element={<Home/>} />
+      </Routes>
     </div>
   );
 }

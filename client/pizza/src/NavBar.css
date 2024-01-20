@@ -1,0 +1,31 @@
+.nav-menu{
+    display: flex;
+}
+.nav-menu li{
+    list-style: none;
+    padding: 10px;
+}
+
+.nav-menu li a {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.hamburger{
+    display: none;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    height: 90px;
+    position: fixed;
+    z-index: 10;
+}
+
+.nav-bg{
+    background-color: rgba(0, 0, 0, 0.85);
+    transition: 1s;
+}
