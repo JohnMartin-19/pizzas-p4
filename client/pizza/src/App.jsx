@@ -4,7 +4,7 @@ import {Routes,Route} from 'react-router-dom'
 
 function App() {
  useEffect(()=>{
-  fetch("http://127.0.0.1:8000/api/pizza/")
+  fetch("http://127.0.0.1:8000/api/restaurant/")
     .then(function(response){response.json()
     .then(function(data) {
         console.log(data);
