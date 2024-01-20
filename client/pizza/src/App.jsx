@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
+import {Routes,Route} from 'react-router-dom'
 
 function App() {
  useEffect(()=>{
@@ -9,13 +10,14 @@ function App() {
         console.log(data);
     });
   })
-  .catch(function(error) {
-    console.log('Fetch Error:', error);
-  });
+    .catch(function(error) {
+      console.log('Fetch Error:', error);
+    });
   },[])
   return (
     <div className="App">
       <h1>Welcome to Pizza HUB</h1>
+      <h3>View your favorite pizzas here!</h3>
     </div>
   );
 }
